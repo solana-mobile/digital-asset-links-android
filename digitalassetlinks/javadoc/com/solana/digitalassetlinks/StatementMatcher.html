@@ -180,9 +180,9 @@ extends <a href="https://d.android.com/reference/java/lang/Object.html?is-extern
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected </code></td>
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.lang.String,androidx.collection.ArrayMap)">StatementMatcher</a></span>&#8203;(<a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relation,
-                <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;targetNamespace,
-                androidx.collection.ArrayMap&lt;<a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://d.android.com/reference/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;targetKeyValues)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String,java.lang.String,android.util.ArrayMap)">StatementMatcher</a></span>&#8203;(@Nullable <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relation,
+                @Nullable <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;targetNamespace,
+                @NotNull <a href="https://d.android.com/reference/android/util/ArrayMap.html?is-external=true" title="class or interface in android.util" class="externalLink">ArrayMap</a>&lt;<a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://d.android.com/reference/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;targetKeyValues)</code></th>
 <td class="colLast">
 <div class="block">Construct a new <a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks"><code>StatementMatcher</code></a></div>
 </td>
@@ -207,16 +207,16 @@ extends <a href="https://d.android.com/reference/java/lang/Object.html?is-extern
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#compare(org.json.JSONObject)">compare</a></span>&#8203;(<a href="https://d.android.com/reference/org/json/JSONObject.html?is-external=true" title="class or interface in org.json" class="externalLink">JSONObject</a>&nbsp;o)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#compare(org.json.JSONObject)">compare</a></span>&#8203;(@NotNull <a href="https://d.android.com/reference/org/json/JSONObject.html?is-external=true" title="class or interface in org.json" class="externalLink">JSONObject</a>&nbsp;o)</code></th>
 <td class="colLast">
 <div class="block">Apply this <a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks"><code>StatementMatcher</code></a> against the specified</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>static <a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks">StatementMatcher</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createAndroidAppStatementMatcher(java.lang.String,java.lang.String,java.lang.String)">createAndroidAppStatementMatcher</a></span>&#8203;(<a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relation,
-                                <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;packageName,
-                                <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sha256CertFingerprint)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createAndroidAppStatementMatcher(java.lang.String,java.lang.String,java.lang.String)">createAndroidAppStatementMatcher</a></span>&#8203;(@NotNull <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relation,
+                                @Nullable <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;packageName,
+                                @Nullable <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sha256CertFingerprint)</code></th>
 <td class="colLast">
 <div class="block">Create a <a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks"><code>StatementMatcher</code></a> for the
  <a href="AssetLinksGrammar.html#GRAMMAR_NAMESPACE_ANDROID_APP"><code>AssetLinksGrammar.GRAMMAR_NAMESPACE_ANDROID_APP</code></a> namespace</div>
@@ -224,8 +224,8 @@ extends <a href="https://d.android.com/reference/java/lang/Object.html?is-extern
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>static <a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks">StatementMatcher</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createWebStatementMatcher(java.lang.String,java.net.URI)">createWebStatementMatcher</a></span>&#8203;(<a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relation,
-                         <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;site)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#createWebStatementMatcher(java.lang.String,java.net.URI)">createWebStatementMatcher</a></span>&#8203;(@NotNull <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relation,
+                         @Nullable <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;site)</code></th>
 <td class="colLast">
 <div class="block">Create a <a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks"><code>StatementMatcher</code></a> for the <a href="AssetLinksGrammar.html#GRAMMAR_NAMESPACE_WEB"><code>AssetLinksGrammar.GRAMMAR_NAMESPACE_WEB</code></a>
  namespace</div>
@@ -242,14 +242,14 @@ extends <a href="https://d.android.com/reference/java/lang/Object.html?is-extern
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>static <a href="StatementMatcher.Builder.html" title="class in com.solana.digitalassetlinks">StatementMatcher.Builder</a></code></td>
+<td class="colFirst"><code>static @NotNull <a href="StatementMatcher.Builder.html" title="class in com.solana.digitalassetlinks">StatementMatcher.Builder</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#newBuilder()">newBuilder</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Create a new <a href="StatementMatcher.Builder.html" title="class in com.solana.digitalassetlinks"><code>StatementMatcher.Builder</code></a></div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<td class="colFirst"><code>@NotNull <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -277,18 +277,18 @@ extends <a href="https://d.android.com/reference/java/lang/Object.html?is-extern
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(java.lang.String,java.lang.String,androidx.collection.ArrayMap)">
+<a id="&lt;init&gt;(java.lang.String,java.lang.String,android.util.ArrayMap)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>StatementMatcher</h4>
 <pre>protected&nbsp;StatementMatcher&#8203;(@Nullable
-                           <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relation,
+                           @Nullable <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relation,
                            @Nullable
-                           <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;targetNamespace,
-                           @NonNull
-                           androidx.collection.ArrayMap&lt;<a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://d.android.com/reference/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;targetKeyValues)</pre>
+                           @Nullable <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;targetNamespace,
+                           @NotNull
+                           @NotNull <a href="https://d.android.com/reference/android/util/ArrayMap.html?is-external=true" title="class or interface in android.util" class="externalLink">ArrayMap</a>&lt;<a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>,&#8203;<a href="https://d.android.com/reference/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a>&gt;&nbsp;targetKeyValues)</pre>
 <div class="block">Construct a new <a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks"><code>StatementMatcher</code></a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -315,8 +315,8 @@ extends <a href="https://d.android.com/reference/java/lang/Object.html?is-extern
 <ul class="blockList">
 <li class="blockList">
 <h4>compare</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;compare&#8203;(@NonNull
-                       <a href="https://d.android.com/reference/org/json/JSONObject.html?is-external=true" title="class or interface in org.json" class="externalLink">JSONObject</a>&nbsp;o)</pre>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;compare&#8203;(@NotNull
+                       @NotNull <a href="https://d.android.com/reference/org/json/JSONObject.html?is-external=true" title="class or interface in org.json" class="externalLink">JSONObject</a>&nbsp;o)</pre>
 <div class="block">Apply this <a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks"><code>StatementMatcher</code></a> against the specified</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -334,10 +334,10 @@ extends <a href="https://d.android.com/reference/java/lang/Object.html?is-extern
 <ul class="blockList">
 <li class="blockList">
 <h4>createWebStatementMatcher</h4>
-<pre class="methodSignature">public static&nbsp;<a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks">StatementMatcher</a>&nbsp;createWebStatementMatcher&#8203;(@NonNull
-                                                         <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relation,
+<pre class="methodSignature">public static&nbsp;<a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks">StatementMatcher</a>&nbsp;createWebStatementMatcher&#8203;(@NotNull
+                                                         @NotNull <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relation,
                                                          @Nullable
-                                                         <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;site)</pre>
+                                                         @Nullable <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;site)</pre>
 <div class="block">Create a <a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks"><code>StatementMatcher</code></a> for the <a href="AssetLinksGrammar.html#GRAMMAR_NAMESPACE_WEB"><code>AssetLinksGrammar.GRAMMAR_NAMESPACE_WEB</code></a>
  namespace</div>
 <dl>
@@ -358,12 +358,12 @@ extends <a href="https://d.android.com/reference/java/lang/Object.html?is-extern
 <ul class="blockList">
 <li class="blockList">
 <h4>createAndroidAppStatementMatcher</h4>
-<pre class="methodSignature">public static&nbsp;<a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks">StatementMatcher</a>&nbsp;createAndroidAppStatementMatcher&#8203;(@NonNull
-                                                                <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relation,
+<pre class="methodSignature">public static&nbsp;<a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks">StatementMatcher</a>&nbsp;createAndroidAppStatementMatcher&#8203;(@NotNull
+                                                                @NotNull <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;relation,
                                                                 @Nullable
-                                                                <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;packageName,
+                                                                @Nullable <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;packageName,
                                                                 @Nullable
-                                                                <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sha256CertFingerprint)</pre>
+                                                                @Nullable <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;sha256CertFingerprint)</pre>
 <div class="block">Create a <a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks"><code>StatementMatcher</code></a> for the
  <a href="AssetLinksGrammar.html#GRAMMAR_NAMESPACE_ANDROID_APP"><code>AssetLinksGrammar.GRAMMAR_NAMESPACE_ANDROID_APP</code></a> namespace</div>
 <dl>
@@ -389,8 +389,8 @@ extends <a href="https://d.android.com/reference/java/lang/Object.html?is-extern
 <ul class="blockList">
 <li class="blockList">
 <h4>newBuilder</h4>
-<pre class="methodSignature">@NonNull
-public static&nbsp;<a href="StatementMatcher.Builder.html" title="class in com.solana.digitalassetlinks">StatementMatcher.Builder</a>&nbsp;newBuilder()</pre>
+<pre class="methodSignature">@NotNull
+public static&nbsp;@NotNull <a href="StatementMatcher.Builder.html" title="class in com.solana.digitalassetlinks">StatementMatcher.Builder</a>&nbsp;newBuilder()</pre>
 <div class="block">Create a new <a href="StatementMatcher.Builder.html" title="class in com.solana.digitalassetlinks"><code>StatementMatcher.Builder</code></a></div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -430,8 +430,8 @@ public static&nbsp;<a href="StatementMatcher.Builder.html" title="class in com.s
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre class="methodSignature">@NonNull
-public&nbsp;<a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toString()</pre>
+<pre class="methodSignature">@NotNull
+public&nbsp;@NotNull <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://d.android.com/reference/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang" class="externalLink">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://d.android.com/reference/java/lang/Object.html?is-external=true" title="class or interface in java.lang" class="externalLink">Object</a></code></dd>

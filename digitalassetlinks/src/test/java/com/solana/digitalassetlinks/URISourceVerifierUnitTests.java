@@ -7,7 +7,8 @@ package com.solana.digitalassetlinks;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
-import org.jetbrains.annotations.NotNull;
+import androidx.annotation.NonNull;
+
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -153,11 +154,11 @@ public class URISourceVerifierUnitTests {
     }
 
     private static class URISourceVerifierMockContentHarness extends URISourceVerifier {
-        @NotNull
+        @NonNull
         private final MockWebContentServer server;
 
         public URISourceVerifierMockContentHarness(
-                @NotNull List<MockWebContentServer.Content> mockWebContent) {
+                @NonNull List<MockWebContentServer.Content> mockWebContent) {
             server = new MockWebContentServer(mockWebContent);
         }
 
@@ -165,9 +166,9 @@ public class URISourceVerifierUnitTests {
             super.verify(sourceURI);
         }
 
-        @NotNull
+        @NonNull
         @Override
-        protected String loadDocument(@NotNull URL documentURL) throws IOException {
+        protected String loadDocument(@NonNull URL documentURL) throws IOException {
             try {
                 return super.loadDocument(server.serve(documentURL.toURI()));
             } catch (URISyntaxException e) {
@@ -180,9 +181,9 @@ public class URISourceVerifierUnitTests {
         private final Semaphore connectCalledSem = new Semaphore(0);
         private final Semaphore connectCancelledSem = new Semaphore(0);
 
-        @NotNull
+        @NonNull
         @Override
-        protected String loadDocument(@NotNull URL documentURL) throws IOException {
+        protected String loadDocument(@NonNull URL documentURL) throws IOException {
             // Busy-wait until disconnect is called (on another thread), then throw an IOException
             final HttpURLConnection mockConn = mock(HttpURLConnection.class);
             doAnswer(invocation -> {
@@ -199,7 +200,7 @@ public class URISourceVerifierUnitTests {
             return super.loadDocument(mockURL);
         }
 
-        public void launchAsyncAfterConnect(@NotNull Runnable r) {
+        public void launchAsyncAfterConnect(@NonNull Runnable r) {
             new Thread(() -> {
                 try {
                     connectCalledSem.acquire();

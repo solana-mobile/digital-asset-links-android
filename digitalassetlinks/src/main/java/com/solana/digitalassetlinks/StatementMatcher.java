@@ -4,10 +4,10 @@
 
 package com.solana.digitalassetlinks;
 
-import android.util.ArrayMap;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.collection.ArrayMap;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,7 +24,7 @@ import java.util.Objects;
 public class StatementMatcher {
     @Nullable private final String mRelation;
     @Nullable private final String mTargetNamespace;
-    @NotNull private final ArrayMap<String, Object> mTargetKeyValues;
+    @NonNull private final ArrayMap<String, Object> mTargetKeyValues;
 
     /**
      * Construct a new {@link StatementMatcher}
@@ -35,7 +35,7 @@ public class StatementMatcher {
      */
     protected StatementMatcher(@Nullable String relation,
                                @Nullable String targetNamespace,
-                               @NotNull ArrayMap<String, Object> targetKeyValues) {
+                               @NonNull ArrayMap<String, Object> targetKeyValues) {
         if (relation != null && !relation.matches(AssetLinksGrammar.RELATION_PATTERN)) {
             throw new IllegalArgumentException("relation does not match the expected format");
         }
@@ -51,7 +51,7 @@ public class StatementMatcher {
      * @return true if all conditions of this {@link StatementMatcher} are satisfied, else false
      * @throws IllegalArgumentException if o is not a well-formed Asset Links statement object
      */
-    public boolean compare(@NotNull JSONObject o) {
+    public boolean compare(@NonNull JSONObject o) {
         try {
             if (mRelation != null) {
                 final JSONArray relations = o.getJSONArray(AssetLinksGrammar.GRAMMAR_RELATION); // mandatory field
@@ -138,8 +138,8 @@ public class StatementMatcher {
     }
 
     // Removes default port numbers and the trailing FQDN '.' for comparison purposes
-    @NotNull
-    private URI canonicalizeURI(@NotNull URI uri) {
+    @NonNull
+    private URI canonicalizeURI(@NonNull URI uri) {
         final boolean hasExplicitDefaultPort;
         final String scheme = uri.getScheme();
         final int port = uri.getPort();
@@ -181,7 +181,7 @@ public class StatementMatcher {
      * @return a {@link StatementMatcher}
      * @throws IllegalArgumentException if site is non-null and fails validation
      */
-    public static StatementMatcher createWebStatementMatcher(@NotNull String relation,
+    public static StatementMatcher createWebStatementMatcher(@NonNull String relation,
                                                              @Nullable URI site) {
         final Builder builder = StatementMatcher.newBuilder()
                 .setRelation(relation)
@@ -209,7 +209,7 @@ public class StatementMatcher {
      * @throws IllegalArgumentException if packageName is non-null and fails validation, or if
      *      sha256CertFingerprint is non-null and fails validation.
      */
-    public static StatementMatcher createAndroidAppStatementMatcher(@NotNull String relation,
+    public static StatementMatcher createAndroidAppStatementMatcher(@NonNull String relation,
                                                                     @Nullable String packageName,
                                                                     @Nullable String sha256CertFingerprint) {
         final Builder builder = StatementMatcher.newBuilder()
@@ -237,7 +237,7 @@ public class StatementMatcher {
      * Create a new {@link Builder}
      * @return a new {@link Builder}
      */
-    @NotNull
+    @NonNull
     public static Builder newBuilder() {
         return new Builder();
     }
@@ -257,7 +257,7 @@ public class StatementMatcher {
         return Objects.hash(mRelation, mTargetNamespace, mTargetKeyValues);
     }
 
-    @NotNull
+    @NonNull
     @Override
     public String toString() {
         return "StatementMatcher{" +
@@ -285,7 +285,7 @@ public class StatementMatcher {
          * @param relation the relation condition for the {@link StatementMatcher}
          * @return this {@link Builder}
          */
-        @NotNull
+        @NonNull
         public Builder setRelation(@Nullable String relation) {
             mRelation = relation;
             return this;
@@ -296,7 +296,7 @@ public class StatementMatcher {
          * @param targetNamespace the target namespace condition for the {@link StatementMatcher}
          * @return this {@link Builder}
          */
-        @NotNull
+        @NonNull
         public Builder setTargetNamespace(@Nullable String targetNamespace) {
             mTargetNamespace = targetNamespace;
             return this;
@@ -308,8 +308,8 @@ public class StatementMatcher {
          * @param value the target String value of this condition
          * @return this {@link Builder}
          */
-        @NotNull
-        public Builder setTargetKeyValue(@NotNull String key, @Nullable String value) {
+        @NonNull
+        public Builder setTargetKeyValue(@NonNull String key, @Nullable String value) {
             return setTargetKeyValue(key, value, false);
         }
 
@@ -321,8 +321,8 @@ public class StatementMatcher {
          *      for key
          * @return this {@link Builder}
          */
-        @NotNull
-        public Builder setTargetKeyValue(@NotNull String key,
+        @NonNull
+        public Builder setTargetKeyValue(@NonNull String key,
                                          @Nullable String value,
                                          boolean allowMatchInArray) {
             if (value != null) {
@@ -343,8 +343,8 @@ public class StatementMatcher {
          * @param value the target {@link URI} value of this condition
          * @return this {@link Builder}
          */
-        @NotNull
-        public Builder setTargetKeyValue(@NotNull String key, @Nullable URI value) {
+        @NonNull
+        public Builder setTargetKeyValue(@NonNull String key, @Nullable URI value) {
             if (value != null) {
                 mKeyValues.put(key, value);
             } else {
@@ -357,17 +357,17 @@ public class StatementMatcher {
          * Construct a new {@link StatementMatcher} from the current state of this {@link Builder}
          * @return a new {@link StatementMatcher}
          */
-        @NotNull
+        @NonNull
         public StatementMatcher build() {
             return new StatementMatcher(mRelation, mTargetNamespace, mKeyValues);
         }
     }
 
     private static final class AllowMatchInArray {
-        @NotNull
+        @NonNull
         public final String value;
 
-        public AllowMatchInArray(@NotNull String value) {
+        public AllowMatchInArray(@NonNull String value) {
             this.value = value;
         }
     }

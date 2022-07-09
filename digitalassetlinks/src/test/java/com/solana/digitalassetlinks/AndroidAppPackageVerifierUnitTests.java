@@ -13,7 +13,8 @@ import android.content.pm.Signature;
 import android.content.pm.SigningInfo;
 import android.os.Build;
 
-import org.jetbrains.annotations.NotNull;
+import androidx.annotation.NonNull;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
@@ -201,8 +202,8 @@ public class AndroidAppPackageVerifierUnitTests {
                 () ->verifier.verify("com.test.sample", URI.create("https://www.test.com")));
     }
 
-    private static PackageManager mockPackageManagerFactory(@NotNull String packageName,
-                                                            @NotNull byte[][] certificates,
+    private static PackageManager mockPackageManagerFactory(@NonNull String packageName,
+                                                            @NonNull byte[][] certificates,
                                                             boolean multipleSigners) {
         if (certificates.length == 0) {
             throw new IllegalArgumentException("at least 1 certificate required");
@@ -243,19 +244,19 @@ public class AndroidAppPackageVerifierUnitTests {
     }
 
     private static class AndroidAppPackageVerifierHarness extends AndroidAppPackageVerifier {
-        @NotNull
+        @NonNull
         private final MockWebContentServer server;
 
         public AndroidAppPackageVerifierHarness(
-                @NotNull PackageManager pm,
-                @NotNull List<MockWebContentServer.Content> mockWebContent) {
+                @NonNull PackageManager pm,
+                @NonNull List<MockWebContentServer.Content> mockWebContent) {
             super(pm);
             server = new MockWebContentServer(mockWebContent);
         }
 
-        @NotNull
+        @NonNull
         @Override
-        protected String loadDocument(@NotNull URL documentURL) throws IOException {
+        protected String loadDocument(@NonNull URL documentURL) throws IOException {
             try {
                 return super.loadDocument(server.serve(documentURL.toURI()));
             } catch (URISyntaxException e) {

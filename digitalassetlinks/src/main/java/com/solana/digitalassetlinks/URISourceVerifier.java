@@ -4,7 +4,7 @@
 
 package com.solana.digitalassetlinks;
 
-import androidx.annotation.NonNull;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,8 +32,8 @@ public abstract class URISourceVerifier {
      * @return the corresponding well-known Asset Links {@link URI}
      * @throws IllegalArgumentException if baseURI is not an hierarchical HTTP or HTTPS URI
      */
-    @NonNull
-    public static URI getWellKnownAssetLinksURI(@NonNull URI baseURI) {
+    @NotNull
+    public static URI getWellKnownAssetLinksURI(@NotNull URI baseURI) {
         if (!baseURI.isAbsolute() || baseURI.isOpaque()) {
             throw new IllegalArgumentException("Source URI must be absolute and hierarchical");
         }
@@ -67,7 +67,7 @@ public abstract class URISourceVerifier {
      * @throws CouldNotVerifyException if verification could not be performed for any reason (such
      *      as malformed Asset Links files, network unavailability, too many includes, etc).
      */
-    protected boolean verify(@NonNull URI sourceURI, StatementMatcherWithCallback... matchers)
+    protected boolean verify(@NotNull URI sourceURI, StatementMatcherWithCallback... matchers)
             throws CouldNotVerifyException {
         if (!mVerificationInProgress.compareAndSet(false, true)) {
             throw new IllegalStateException("verification already in progress");
@@ -130,8 +130,8 @@ public abstract class URISourceVerifier {
 
     // N.B. protected only so compatibility test suite harnesses can override this to provide mock
     // URL objects
-    @NonNull
-    protected String loadDocument(@NonNull URL documentURL) throws IOException {
+    @NotNull
+    protected String loadDocument(@NotNull URL documentURL) throws IOException {
         final HttpURLConnection URIConnection = (HttpURLConnection)documentURL.openConnection();
         mHttpURLConnection.set(URIConnection);
 
@@ -174,14 +174,14 @@ public abstract class URISourceVerifier {
      * Asset Links tree.
      */
     protected static final class StatementMatcherWithCallback {
-        @NonNull
+        @NotNull
         public final StatementMatcher statementMatcher;
 
-        @NonNull
+        @NotNull
         public final AssetLinksJSONParser.StatementMatcherCallback callback;
 
-        public StatementMatcherWithCallback(@NonNull StatementMatcher statementMatcher,
-                                            @NonNull AssetLinksJSONParser.StatementMatcherCallback callback) {
+        public StatementMatcherWithCallback(@NotNull StatementMatcher statementMatcher,
+                                            @NotNull AssetLinksJSONParser.StatementMatcherCallback callback) {
             this.statementMatcher = statementMatcher;
             this.callback = callback;
         }

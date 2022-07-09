@@ -191,7 +191,7 @@ extends <a href="URISourceVerifier.html" title="class in com.solana.digitalasset
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(android.content.pm.PackageManager)">AndroidAppPackageVerifier</a></span>&#8203;(@NotNull <a href="https://d.android.com/reference/android/content/pm/PackageManager.html?is-external=true" title="class or interface in android.content.pm" class="externalLink">PackageManager</a>&nbsp;pm)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(android.content.pm.PackageManager)">AndroidAppPackageVerifier</a></span>&#8203;(<a href="https://d.android.com/reference/android/content/pm/PackageManager.html?is-external=true" title="class or interface in android.content.pm" class="externalLink">PackageManager</a>&nbsp;pm)</code></th>
 <td class="colLast">
 <div class="block">Construct a new <a href="AndroidAppPackageVerifier.html" title="class in com.solana.digitalassetlinks"><code>AndroidAppPackageVerifier</code></a></div>
 </td>
@@ -216,8 +216,8 @@ extends <a href="URISourceVerifier.html" title="class in com.solana.digitalasset
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verify(java.lang.String,java.net.URI)">verify</a></span>&#8203;(@NotNull <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;packageName,
-      @NotNull <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;uri)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verify(java.lang.String,java.net.URI)">verify</a></span>&#8203;(<a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;packageName,
+      <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;uri)</code></th>
 <td class="colLast">
 <div class="block">Verify that the specified app package is covered by a reliable statement in the Asset Links
  JSON for the provided <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink"><code>URI</code></a>.</div>
@@ -260,8 +260,8 @@ extends <a href="URISourceVerifier.html" title="class in com.solana.digitalasset
 <ul class="blockListLast">
 <li class="blockList">
 <h4>AndroidAppPackageVerifier</h4>
-<pre>public&nbsp;AndroidAppPackageVerifier&#8203;(@NotNull
-                                 @NotNull <a href="https://d.android.com/reference/android/content/pm/PackageManager.html?is-external=true" title="class or interface in android.content.pm" class="externalLink">PackageManager</a>&nbsp;pm)</pre>
+<pre>public&nbsp;AndroidAppPackageVerifier&#8203;(@NonNull
+                                 <a href="https://d.android.com/reference/android/content/pm/PackageManager.html?is-external=true" title="class or interface in android.content.pm" class="externalLink">PackageManager</a>&nbsp;pm)</pre>
 <div class="block">Construct a new <a href="AndroidAppPackageVerifier.html" title="class in com.solana.digitalassetlinks"><code>AndroidAppPackageVerifier</code></a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -285,10 +285,10 @@ extends <a href="URISourceVerifier.html" title="class in com.solana.digitalasset
 <ul class="blockListLast">
 <li class="blockList">
 <h4>verify</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;verify&#8203;(@NotNull
-                      @NotNull <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;packageName,
-                      @NotNull
-                      @NotNull <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;uri)
+<pre class="methodSignature">public&nbsp;boolean&nbsp;verify&#8203;(@NonNull
+                      <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;packageName,
+                      @NonNull
+                      <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;uri)
                throws <a href="AndroidAppPackageVerifier.CouldNotVerifyPackageException.html" title="class in com.solana.digitalassetlinks">AndroidAppPackageVerifier.CouldNotVerifyPackageException</a></pre>
 <div class="block">Verify that the specified app package is covered by a reliable statement in the Asset Links
  JSON for the provided <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink"><code>URI</code></a>.

@@ -219,21 +219,21 @@ extends <a href="https://d.android.com/reference/java/lang/Object.html?is-extern
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>static @NotNull <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getWellKnownAssetLinksURI(java.net.URI)">getWellKnownAssetLinksURI</a></span>&#8203;(@NotNull <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;baseURI)</code></th>
+<td class="colFirst"><code>static <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getWellKnownAssetLinksURI(java.net.URI)">getWellKnownAssetLinksURI</a></span>&#8203;(<a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;baseURI)</code></th>
 <td class="colLast">
 <div class="block">Given an HTTP or HTTPS absolute <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink"><code>URI</code></a>, constructs the corresponding well-known Asset
  Links <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink"><code>URI</code></a>.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>protected @NotNull <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#loadDocument(java.net.URL)">loadDocument</a></span>&#8203;(@NotNull <a href="https://d.android.com/reference/java/net/URL.html?is-external=true" title="class or interface in java.net" class="externalLink">URL</a>&nbsp;documentURL)</code></th>
+<td class="colFirst"><code>protected <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#loadDocument(java.net.URL)">loadDocument</a></span>&#8203;(<a href="https://d.android.com/reference/java/net/URL.html?is-external=true" title="class or interface in java.net" class="externalLink">URL</a>&nbsp;documentURL)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>protected boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verify(java.net.URI,com.solana.digitalassetlinks.URISourceVerifier.StatementMatcherWithCallback...)">verify</a></span>&#8203;(@NotNull <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;sourceURI,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#verify(java.net.URI,com.solana.digitalassetlinks.URISourceVerifier.StatementMatcherWithCallback...)">verify</a></span>&#8203;(<a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;sourceURI,
       <a href="URISourceVerifier.StatementMatcherWithCallback.html" title="class in com.solana.digitalassetlinks">URISourceVerifier.StatementMatcherWithCallback</a>...&nbsp;matchers)</code></th>
 <td class="colLast">
 <div class="block">Load the Asset Links tree from sourceURI, verify its contents, and run the provided
@@ -290,9 +290,9 @@ extends <a href="https://d.android.com/reference/java/lang/Object.html?is-extern
 <ul class="blockList">
 <li class="blockList">
 <h4>getWellKnownAssetLinksURI</h4>
-<pre class="methodSignature">@NotNull
-public static&nbsp;@NotNull <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;getWellKnownAssetLinksURI&#8203;(@NotNull
-                                                     @NotNull <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;baseURI)</pre>
+<pre class="methodSignature">@NonNull
+public static&nbsp;<a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;getWellKnownAssetLinksURI&#8203;(@NonNull
+                                            <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;baseURI)</pre>
 <div class="block">Given an HTTP or HTTPS absolute <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink"><code>URI</code></a>, constructs the corresponding well-known Asset
  Links <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink"><code>URI</code></a>. For e.g., https://www.solana.com/example will return
  https://www.solana.com/.well-known/assetlinks.json.</div>
@@ -312,8 +312,8 @@ public static&nbsp;@NotNull <a href="https://d.android.com/reference/java/net/UR
 <ul class="blockList">
 <li class="blockList">
 <h4>verify</h4>
-<pre class="methodSignature">protected&nbsp;boolean&nbsp;verify&#8203;(@NotNull
-                         @NotNull <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;sourceURI,
+<pre class="methodSignature">protected&nbsp;boolean&nbsp;verify&#8203;(@NonNull
+                         <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;sourceURI,
                          <a href="URISourceVerifier.StatementMatcherWithCallback.html" title="class in com.solana.digitalassetlinks">URISourceVerifier.StatementMatcherWithCallback</a>...&nbsp;matchers)
                   throws <a href="URISourceVerifier.CouldNotVerifyException.html" title="class in com.solana.digitalassetlinks">URISourceVerifier.CouldNotVerifyException</a></pre>
 <div class="block">Load the Asset Links tree from sourceURI, verify its contents, and run the provided
@@ -356,10 +356,10 @@ public static&nbsp;@NotNull <a href="https://d.android.com/reference/java/net/UR
 <ul class="blockListLast">
 <li class="blockList">
 <h4>loadDocument</h4>
-<pre class="methodSignature">@NotNull
-protected&nbsp;@NotNull <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;loadDocument&#8203;(@NotNull
-                                       @NotNull <a href="https://d.android.com/reference/java/net/URL.html?is-external=true" title="class or interface in java.net" class="externalLink">URL</a>&nbsp;documentURL)
-                                throws <a href="https://d.android.com/reference/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></pre>
+<pre class="methodSignature">@NonNull
+protected&nbsp;<a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;loadDocument&#8203;(@NonNull
+                              <a href="https://d.android.com/reference/java/net/URL.html?is-external=true" title="class or interface in java.net" class="externalLink">URL</a>&nbsp;documentURL)
+                       throws <a href="https://d.android.com/reference/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="https://d.android.com/reference/java/io/IOException.html?is-external=true" title="class or interface in java.io" class="externalLink">IOException</a></code></dd>

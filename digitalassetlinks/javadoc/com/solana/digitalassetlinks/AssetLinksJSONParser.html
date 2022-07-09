@@ -230,15 +230,15 @@ extends <a href="https://d.android.com/reference/java/lang/Object.html?is-extern
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addStatementMatcher(com.solana.digitalassetlinks.StatementMatcher,com.solana.digitalassetlinks.AssetLinksJSONParser.StatementMatcherCallback)">addStatementMatcher</a></span>&#8203;(@NotNull <a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks">StatementMatcher</a>&nbsp;statementMatcher,
-                   @NotNull <a href="AssetLinksJSONParser.StatementMatcherCallback.html" title="interface in com.solana.digitalassetlinks">AssetLinksJSONParser.StatementMatcherCallback</a>&nbsp;callback)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addStatementMatcher(com.solana.digitalassetlinks.StatementMatcher,com.solana.digitalassetlinks.AssetLinksJSONParser.StatementMatcherCallback)">addStatementMatcher</a></span>&#8203;(<a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks">StatementMatcher</a>&nbsp;statementMatcher,
+                   <a href="AssetLinksJSONParser.StatementMatcherCallback.html" title="interface in com.solana.digitalassetlinks">AssetLinksJSONParser.StatementMatcherCallback</a>&nbsp;callback)</code></th>
 <td class="colLast">
 <div class="block">Add a <a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks"><code>StatementMatcher</code></a> and corresponding <a href="AssetLinksJSONParser.StatementMatcherCallback.html" title="interface in com.solana.digitalassetlinks"><code>AssetLinksJSONParser.StatementMatcherCallback</code></a> to this
  <a href="AssetLinksJSONParser.html" title="class in com.solana.digitalassetlinks"><code>AssetLinksJSONParser</code></a>.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>@NotNull <a href="https://d.android.com/reference/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&gt;</code></td>
+<td class="colFirst"><code><a href="https://d.android.com/reference/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getURIs()">getURIs</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Retrieve all URIs referenecd by this Asset Links tree.</div>
@@ -266,17 +266,17 @@ extends <a href="https://d.android.com/reference/java/lang/Object.html?is-extern
 </td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>@Nullable <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onDocumentLoaded(java.net.URI,java.lang.String)">onDocumentLoaded</a></span>&#8203;(@NotNull <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;documentURI,
-                @NotNull <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;document)</code></th>
+<td class="colFirst"><code><a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#onDocumentLoaded(java.net.URI,java.lang.String)">onDocumentLoaded</a></span>&#8203;(<a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;documentURI,
+                <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;document)</code></th>
 <td class="colLast">
 <div class="block">This method should be invoked with the document contents for the <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink"><code>URI</code></a>s returned from
  <a href="#start(java.net.URI)"><code>start(URI)</code></a> and <a href="#onDocumentLoaded(java.net.URI,java.lang.String)"><code>onDocumentLoaded(URI, String)</code></a>.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>@NotNull <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#start(java.net.URI)">start</a></span>&#8203;(@NotNull <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;sourceURI)</code></th>
+<td class="colFirst"><code><a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a></code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#start(java.net.URI)">start</a></span>&#8203;(<a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;sourceURI)</code></th>
 <td class="colLast">
 <div class="block">Start this <a href="AssetLinksJSONParser.html" title="class in com.solana.digitalassetlinks"><code>AssetLinksJSONParser</code></a> for the specified Asset Links <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink"><code>URI</code></a></div>
 </td>
@@ -331,8 +331,8 @@ extends <a href="https://d.android.com/reference/java/lang/Object.html?is-extern
 <ul class="blockList">
 <li class="blockList">
 <h4>getURIs</h4>
-<pre class="methodSignature">@NotNull
-public&nbsp;@NotNull <a href="https://d.android.com/reference/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&gt;&nbsp;getURIs()</pre>
+<pre class="methodSignature">@NonNull
+public&nbsp;<a href="https://d.android.com/reference/java/util/List.html?is-external=true" title="class or interface in java.util" class="externalLink">List</a>&lt;<a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&gt;&nbsp;getURIs()</pre>
 <div class="block">Retrieve all URIs referenecd by this Asset Links tree. If <a href="#isComplete()"><code>isComplete()</code></a>, this set
  represents the full Asset Links tree derived from the first entry in the returned list.</div>
 <dl>
@@ -395,10 +395,10 @@ public&nbsp;@NotNull <a href="https://d.android.com/reference/java/util/List.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>addStatementMatcher</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;addStatementMatcher&#8203;(@NotNull
-                                @NotNull <a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks">StatementMatcher</a>&nbsp;statementMatcher,
-                                @NotNull
-                                @NotNull <a href="AssetLinksJSONParser.StatementMatcherCallback.html" title="interface in com.solana.digitalassetlinks">AssetLinksJSONParser.StatementMatcherCallback</a>&nbsp;callback)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;addStatementMatcher&#8203;(@NonNull
+                                <a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks">StatementMatcher</a>&nbsp;statementMatcher,
+                                @NonNull
+                                <a href="AssetLinksJSONParser.StatementMatcherCallback.html" title="interface in com.solana.digitalassetlinks">AssetLinksJSONParser.StatementMatcherCallback</a>&nbsp;callback)</pre>
 <div class="block">Add a <a href="StatementMatcher.html" title="class in com.solana.digitalassetlinks"><code>StatementMatcher</code></a> and corresponding <a href="AssetLinksJSONParser.StatementMatcherCallback.html" title="interface in com.solana.digitalassetlinks"><code>AssetLinksJSONParser.StatementMatcherCallback</code></a> to this
  <a href="AssetLinksJSONParser.html" title="class in com.solana.digitalassetlinks"><code>AssetLinksJSONParser</code></a>. All statement matchers should be added before
  <a href="#start(java.net.URI)"><code>start(URI)</code></a> is called.</div>
@@ -415,9 +415,9 @@ public&nbsp;@NotNull <a href="https://d.android.com/reference/java/util/List.htm
 <ul class="blockList">
 <li class="blockList">
 <h4>start</h4>
-<pre class="methodSignature">@NotNull
-public&nbsp;@NotNull <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;start&#8203;(@NotNull
-                          @NotNull <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;sourceURI)</pre>
+<pre class="methodSignature">@NonNull
+public&nbsp;<a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;start&#8203;(@NonNull
+                 <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;sourceURI)</pre>
 <div class="block">Start this <a href="AssetLinksJSONParser.html" title="class in com.solana.digitalassetlinks"><code>AssetLinksJSONParser</code></a> for the specified Asset Links <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink"><code>URI</code></a></div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -434,13 +434,13 @@ public&nbsp;@NotNull <a href="https://d.android.com/reference/java/net/URI.html?
 <li class="blockList">
 <h4>onDocumentLoaded</h4>
 <pre class="methodSignature">@Nullable
-public&nbsp;@Nullable <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;onDocumentLoaded&#8203;(@NotNull
-                                      @NotNull <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;documentURI,
-                                      @NotNull
-                                      @NotNull <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;document)
-                               throws <a href="AssetLinksJSONParser.IllFormattedStatementException.html" title="class in com.solana.digitalassetlinks">AssetLinksJSONParser.IllFormattedStatementException</a>,
-                                      <a href="AssetLinksJSONParser.TooManyIncludesException.html" title="class in com.solana.digitalassetlinks">AssetLinksJSONParser.TooManyIncludesException</a>,
-                                      <a href="AssetLinksJSONParser.MatcherException.html" title="class in com.solana.digitalassetlinks">AssetLinksJSONParser.MatcherException</a></pre>
+public&nbsp;<a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;onDocumentLoaded&#8203;(@NonNull
+                            <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink">URI</a>&nbsp;documentURI,
+                            @NonNull
+                            <a href="https://d.android.com/reference/java/lang/String.html?is-external=true" title="class or interface in java.lang" class="externalLink">String</a>&nbsp;document)
+                     throws <a href="AssetLinksJSONParser.IllFormattedStatementException.html" title="class in com.solana.digitalassetlinks">AssetLinksJSONParser.IllFormattedStatementException</a>,
+                            <a href="AssetLinksJSONParser.TooManyIncludesException.html" title="class in com.solana.digitalassetlinks">AssetLinksJSONParser.TooManyIncludesException</a>,
+                            <a href="AssetLinksJSONParser.MatcherException.html" title="class in com.solana.digitalassetlinks">AssetLinksJSONParser.MatcherException</a></pre>
 <div class="block">This method should be invoked with the document contents for the <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink"><code>URI</code></a>s returned from
  <a href="#start(java.net.URI)"><code>start(URI)</code></a> and <a href="#onDocumentLoaded(java.net.URI,java.lang.String)"><code>onDocumentLoaded(URI, String)</code></a>. It will continue to return
  <a href="https://d.android.com/reference/java/net/URI.html?is-external=true" title="class or interface in java.net" class="externalLink"><code>URI</code></a>s until the entire Asset Links include tree has been parsed, or until a parsing

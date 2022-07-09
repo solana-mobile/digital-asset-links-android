@@ -9,7 +9,8 @@ import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.os.Build;
 
-import org.jetbrains.annotations.NotNull;
+import androidx.annotation.NonNull;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -29,7 +30,7 @@ public class AndroidAppPackageVerifier extends URISourceVerifier {
      * Construct a new {@link AndroidAppPackageVerifier}
      * @param pm the {@link PackageManager} from which to look up app package details
      */
-    public AndroidAppPackageVerifier(@NotNull PackageManager pm) {
+    public AndroidAppPackageVerifier(@NonNull PackageManager pm) {
         mPackageManager = pm;
     }
 
@@ -50,7 +51,7 @@ public class AndroidAppPackageVerifier extends URISourceVerifier {
      *      successful. Note that this doesn't necessarily imply that the package was not verified,
      *      but rather that a relationship could not be established.
      */
-    public boolean verify(@NotNull String packageName, @NotNull URI uri)
+    public boolean verify(@NonNull String packageName, @NonNull URI uri)
             throws CouldNotVerifyPackageException {
         if (!"https".equalsIgnoreCase(uri.getScheme())) {
             throw new CouldNotVerifyPackageException(
@@ -144,9 +145,9 @@ public class AndroidAppPackageVerifier extends URISourceVerifier {
         return result;
     }
 
-    @NotNull
+    @NonNull
     private static byte[][] convertDEREncodedCertificatesToSHA256Fingerprints(
-            @NotNull Signature[] derEncodedCerts) {
+            @NonNull Signature[] derEncodedCerts) {
         final MessageDigest digest;
         try {
             digest = MessageDigest.getInstance("SHA-256");
@@ -160,9 +161,9 @@ public class AndroidAppPackageVerifier extends URISourceVerifier {
         return sha256CertFingerprints;
     }
 
-    @NotNull
+    @NonNull
     private static byte[] convertSHA256CertFingerprintStringToByteArray(
-            @NotNull String sha256CertFingerprint) {
+            @NonNull String sha256CertFingerprint) {
         // NOTE: the format of the certificate fingerprint string is already checked against
         // AssetLinksGrammer.SHA256_CERT_FINGERPRINT_PATTERN by AssetLinksJSONParser
         final byte[] fp = new byte[32];

@@ -87,8 +87,8 @@ tasks.whenTaskAdded { task ->
 }
 
 dependencies {
-    compileOnly 'org.jetbrains:annotations:23.0.0'
-    testCompileOnly 'org.jetbrains:annotations:23.0.0'
+    implementation 'androidx.annotation:annotation:1.4.0'
+    implementation 'androidx.collection:collection:1.2.0'
     testImplementation 'com.google.protobuf:protobuf-java:3.21.2'
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.mockito:mockito-inline:4.6.1'

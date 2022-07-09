@@ -7,8 +7,8 @@ package com.solana.digitalassetlinks;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -26,7 +26,7 @@ public class MockWebContentServer {
         public final String contentType;
         public final String responseBody;
 
-        public Content(@NotNull URI url,
+        public Content(@NonNull URI url,
                        int responseCode,
                        @Nullable String contentType,
                        @Nullable String responseBody) {
@@ -50,8 +50,8 @@ public class MockWebContentServer {
         }
     }
 
-    @NotNull
-    private static URL createMockURLForContent(@NotNull Content content) {
+    @NonNull
+    private static URL createMockURLForContent(@NonNull Content content) {
         try {
             final HttpURLConnection mockConn = mock(HttpURLConnection.class);
             when(mockConn.getResponseCode()).thenReturn(content.responseCode);
@@ -70,7 +70,7 @@ public class MockWebContentServer {
         }
     }
 
-    @NotNull
+    @NonNull
     public URL serve(URI source) {
         URL url = mockURLs.get(source);
         if (url == null) {

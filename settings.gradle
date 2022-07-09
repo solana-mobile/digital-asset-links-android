@@ -1,0 +1,20 @@
+/*
+ * Copyright (c) 2022 Solana Mobile Inc.
+ */
+
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Digital Asset Links for Android"
+include ':digitalassetlinks'

@@ -7,9 +7,8 @@ package com.solana.digitalassetlinks;
 import android.util.Log;
 import android.util.Pair;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -46,7 +45,7 @@ public class AssetLinksJSONParser {
      * @return a {@link List} of {@link URI}s in the order discovered. The first entry is the source
      *      {@link URI} for this Asset Links tree.
      */
-    @NonNull
+    @NotNull
     public List<URI> getURIs() {
         return Collections.unmodifiableList(mURIs);
     }
@@ -85,8 +84,8 @@ public class AssetLinksJSONParser {
      * @param statementMatcher the {@link StatementMatcher} to add
      * @param callback the {@link StatementMatcherCallback} to invoke when a match occurs
      */
-    public void addStatementMatcher(@NonNull StatementMatcher statementMatcher,
-                                    @NonNull StatementMatcherCallback callback) {
+    public void addStatementMatcher(@NotNull StatementMatcher statementMatcher,
+                                    @NotNull StatementMatcherCallback callback) {
         mStatementMatchers.add(Pair.create(statementMatcher, callback));
     }
 
@@ -95,8 +94,8 @@ public class AssetLinksJSONParser {
      * @param sourceURI the initial Asset Links {@link URI}. It must be an absolute {@link URI}.
      * @return the first {@link URI} to fetch for {@link #onDocumentLoaded(URI, String)}
      */
-    @NonNull
-    public URI start(@NonNull URI sourceURI) {
+    @NotNull
+    public URI start(@NotNull URI sourceURI) {
         if (!sourceURI.isAbsolute()) {
             throw new IllegalArgumentException("Source URI must be absolute");
         }
@@ -127,7 +126,7 @@ public class AssetLinksJSONParser {
      * @throws MatcherException if any registered {@link StatementMatcher} throws an exception
      */
     @Nullable
-    public URI onDocumentLoaded(@NonNull URI documentURI, @NonNull String document)
+    public URI onDocumentLoaded(@NotNull URI documentURI, @NotNull String document)
             throws IllFormattedStatementException, TooManyIncludesException, MatcherException {
         if (mIsError) {
             throw new IllegalStateException("AssetLinksJSONParser already in the error state");
@@ -187,10 +186,10 @@ public class AssetLinksJSONParser {
         }
     }
 
-    private void parseAssetLinksDocument(@NonNull URI documentURI,
-                                         @NonNull String document,
-                                         @NonNull ArrayList<JSONObject> statementList,
-                                         @NonNull ArrayList<URI> includeList)
+    private void parseAssetLinksDocument(@NotNull URI documentURI,
+                                         @NotNull String document,
+                                         @NotNull ArrayList<JSONObject> statementList,
+                                         @NotNull ArrayList<URI> includeList)
             throws IllFormattedStatementException {
         try {
             final JSONArray statements = new JSONArray(document); // mandatory top-level array
@@ -216,9 +215,9 @@ public class AssetLinksJSONParser {
         }
     }
 
-    private void parseIncludeStatement(@NonNull URI documentURI,
-                                       @NonNull JSONObject statement,
-                                       @NonNull ArrayList<URI> includeList)
+    private void parseIncludeStatement(@NotNull URI documentURI,
+                                       @NotNull JSONObject statement,
+                                       @NotNull ArrayList<URI> includeList)
             throws JSONException, IllFormattedStatementException {
         if (statement.has(AssetLinksGrammar.GRAMMAR_RELATION) ||
                 statement.has(AssetLinksGrammar.GRAMMAR_TARGET)) {
@@ -240,8 +239,8 @@ public class AssetLinksJSONParser {
         includeList.add(resolvedURI);
     }
 
-    private void parseAssetLinkStatement(@NonNull JSONObject statement,
-                                         @NonNull ArrayList<JSONObject> statementList)
+    private void parseAssetLinkStatement(@NotNull JSONObject statement,
+                                         @NotNull ArrayList<JSONObject> statementList)
             throws JSONException, IllFormattedStatementException {
         final JSONArray relations = statement.getJSONArray(AssetLinksGrammar.GRAMMAR_RELATION);
         if (relations.length() == 0) {
@@ -264,7 +263,7 @@ public class AssetLinksJSONParser {
         statementList.add(statement);
     }
 
-    private void validateWebTarget(@NonNull JSONObject webTarget)
+    private void validateWebTarget(@NotNull JSONObject webTarget)
             throws JSONException, IllFormattedStatementException {
         final String site = webTarget.getString(AssetLinksGrammar.GRAMMAR_WEB_SITE);
         final URI uri;
@@ -279,7 +278,7 @@ public class AssetLinksJSONParser {
         }
     }
 
-    private void validateAndroidAppTarget(@NonNull JSONObject androidAppTarget)
+    private void validateAndroidAppTarget(@NotNull JSONObject androidAppTarget)
             throws JSONException, IllFormattedStatementException {
         final String packageName = androidAppTarget.getString("package_name");
         if (!packageName.matches(AssetLinksGrammar.PACKAGE_NAME_PATTERN)) {
@@ -301,7 +300,7 @@ public class AssetLinksJSONParser {
 
     /** A callback to be invoked when a {@link StatementMatcher} match occurs */
     public interface StatementMatcherCallback {
-        void onMatch(@NonNull StatementMatcher matcher, @NonNull JSONObject o) throws JSONException;
+        void onMatch(@NotNull StatementMatcher matcher, @NotNull JSONObject o) throws JSONException;
     }
 
     /** The base type for all {@link AssetLinksJSONParser} exceptions */

@@ -6,14 +6,13 @@ package com.solana.digitalassetlinks;
 
 import static org.junit.Assert.*;
 
-import androidx.annotation.NonNull;
-
 import com.google.digitalassetlinks.v1.MessagesProto;
 import com.google.digitalassetlinks.v1.testproto.TestProto;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Message;
 import com.google.protobuf.TextFormat;
 
+import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Assume;
@@ -64,7 +63,7 @@ public class DigitalAssetLinksCompatibilityTestSuite {
             new File(BASE_PATH, "5000-include-file-processing/5000-include-file-processing.pb"),
     };
 
-    @NonNull
+    @NotNull
     @ParameterizedRobolectricTestRunner.Parameters(name="{0} -> {1}")
     public static Iterable<Object[]> data() {
         final ArrayList<Object[]> tests = new ArrayList<>();
@@ -92,7 +91,7 @@ public class DigitalAssetLinksCompatibilityTestSuite {
         return tests;
     }
 
-    private static void loadTextProtobuf(@NonNull File file, @NonNull Message.Builder messageBuilder) {
+    private static void loadTextProtobuf(@NotNull File file, @NotNull Message.Builder messageBuilder) {
         try {
             loadTextProtobuf(new FileReader(file), messageBuilder);
         } catch (FileNotFoundException e) {
@@ -100,7 +99,7 @@ public class DigitalAssetLinksCompatibilityTestSuite {
         }
     }
 
-    private static void loadTextProtobuf(@NonNull Reader reader, @NonNull Message.Builder messageBuilder) {
+    private static void loadTextProtobuf(@NotNull Reader reader, @NotNull Message.Builder messageBuilder) {
         final TextFormat.Parser textParser = TextFormat.getParser();
         try {
             textParser.merge(reader, messageBuilder);
@@ -109,22 +108,22 @@ public class DigitalAssetLinksCompatibilityTestSuite {
         }
     }
 
-    @NonNull
+    @NotNull
     private final String testGroupName;
 
-    @NonNull
+    @NotNull
     private final String testName;
 
-    @NonNull
+    @NotNull
     private final TestProto.TestGroup testGroup;
 
-    @NonNull
+    @NotNull
     private final AbstractMessage testCase;
 
-    public DigitalAssetLinksCompatibilityTestSuite(@NonNull String testGroupName,
-                                                   @NonNull String testName,
-                                                   @NonNull TestProto.TestGroup testGroup,
-                                                   @NonNull AbstractMessage testCase) {
+    public DigitalAssetLinksCompatibilityTestSuite(@NotNull String testGroupName,
+                                                   @NotNull String testName,
+                                                   @NotNull TestProto.TestGroup testGroup,
+                                                   @NotNull AbstractMessage testCase) {
         this.testGroupName = testGroupName;
         this.testName = testName;
         this.testGroup = testGroup;
@@ -161,7 +160,7 @@ public class DigitalAssetLinksCompatibilityTestSuite {
     // List request test case
     // =============================================================================================
 
-    private void listRequestTestCase(@NonNull TestProto.ListTestCase listTestCase) {
+    private void listRequestTestCase(@NotNull TestProto.ListTestCase listTestCase) {
         final MessagesProto.ListRequest request = listTestCase.getRequest();
         final MessagesProto.Asset source = request.getSource();
         final MessagesProto.Asset.AssetCase assetCase = source.getAssetCase();
@@ -204,8 +203,8 @@ public class DigitalAssetLinksCompatibilityTestSuite {
         }
     }
 
-    private void assertStatementsListsMatch(@NonNull List<MessagesProto.Statement> ref,
-                                            @NonNull List<MessagesProto.Statement> check) {
+    private void assertStatementsListsMatch(@NotNull List<MessagesProto.Statement> ref,
+                                            @NotNull List<MessagesProto.Statement> check) {
         assertEquals(ref.size(), check.size());
 
         final ArrayList<MessagesProto.Statement> mutCheck = new ArrayList<>(check);
@@ -252,11 +251,11 @@ public class DigitalAssetLinksCompatibilityTestSuite {
     // the Digital Asset Links Compatibility Test Suite to our verifier implementation.
     private static class ListRequestVerifierHarness extends MockInjectingURISourceVerifier {
         public ListRequestVerifierHarness(
-                @NonNull List<TestProto.HostedWebContent> hostedWebContents) {
+                @NotNull List<TestProto.HostedWebContent> hostedWebContents) {
             super(hostedWebContents);
         }
 
-        public List<MessagesProto.Statement> list(@NonNull URI uri, @NonNull String relation)
+        public List<MessagesProto.Statement> list(@NotNull URI uri, @NotNull String relation)
                 throws CouldNotVerifyException, QueryParsingException {
             if (!AssetLinksGrammar.isValidSiteURI(uri)) {
                 throw new QueryParsingException("Invalid source URI");
@@ -322,7 +321,7 @@ public class DigitalAssetLinksCompatibilityTestSuite {
     // Check request test case
     // =============================================================================================
 
-    private void checkRequestTestCase(@NonNull TestProto.CheckTestCase checkTestCase) {
+    private void checkRequestTestCase(@NotNull TestProto.CheckTestCase checkTestCase) {
         final MessagesProto.CheckRequest request = checkTestCase.getRequest();
         final MessagesProto.Asset source = request.getSource();
         final MessagesProto.Asset.AssetCase assetCase = source.getAssetCase();
@@ -358,13 +357,13 @@ public class DigitalAssetLinksCompatibilityTestSuite {
     // the Digital Asset Links Compatibility Test Suite to our verifier implementation.
     private static class CheckRequestVerifierHarness extends MockInjectingURISourceVerifier {
         public CheckRequestVerifierHarness(
-                @NonNull List<TestProto.HostedWebContent> hostedWebContents) {
+                @NotNull List<TestProto.HostedWebContent> hostedWebContents) {
             super(hostedWebContents);
         }
 
-        public boolean check(@NonNull URI uri,
-                             @NonNull String relation,
-                             @NonNull MessagesProto.Asset target)
+        public boolean check(@NotNull URI uri,
+                             @NotNull String relation,
+                             @NotNull MessagesProto.Asset target)
                 throws CouldNotVerifyException, QueryParsingException {
             if (!AssetLinksGrammar.isValidSiteURI(uri)) {
                 throw new QueryParsingException("Invalid source URI");
@@ -429,7 +428,7 @@ public class DigitalAssetLinksCompatibilityTestSuite {
         private boolean hasParserWarnings;
 
         public MockInjectingURISourceVerifier(
-                @NonNull List<TestProto.HostedWebContent> hostedWebContents) {
+                @NotNull List<TestProto.HostedWebContent> hostedWebContents) {
             if (RUN_LOCALLY) {
                 ArrayList<MockWebContentServer.Content> mockWebContents =
                         new ArrayList<>(hostedWebContents.size());
@@ -447,8 +446,8 @@ public class DigitalAssetLinksCompatibilityTestSuite {
         }
 
         // Removes default port numbers and the trailing FQDN '.' for comparison purposes
-        @NonNull
-        private URI canonicalizeURI(@NonNull URI uri) {
+        @NotNull
+        private URI canonicalizeURI(@NotNull URI uri) {
             final boolean hasExplicitDefaultPort;
             final String scheme = uri.getScheme();
             final int port = uri.getPort();
@@ -482,7 +481,7 @@ public class DigitalAssetLinksCompatibilityTestSuite {
         }
 
         @Override
-        protected boolean verify(@NonNull URI sourceURI, StatementMatcherWithCallback... matchers)
+        protected boolean verify(@NotNull URI sourceURI, StatementMatcherWithCallback... matchers)
                 throws CouldNotVerifyException {
             final boolean result = super.verify(sourceURI, matchers);
             hasParserWarnings = !result;
@@ -493,9 +492,9 @@ public class DigitalAssetLinksCompatibilityTestSuite {
             return this.hasParserWarnings;
         }
 
-        @NonNull
+        @NotNull
         @Override
-        protected String loadDocument(@NonNull URL documentURL) throws IOException {
+        protected String loadDocument(@NotNull URL documentURL) throws IOException {
             URL url;
             if (RUN_LOCALLY) {
                 try {

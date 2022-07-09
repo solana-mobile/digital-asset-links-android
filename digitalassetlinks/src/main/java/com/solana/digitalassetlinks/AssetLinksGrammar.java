@@ -4,7 +4,7 @@
 
 package com.solana.digitalassetlinks;
 
-import androidx.annotation.NonNull;
+import org.jetbrains.annotations.NotNull;
 
 import java.net.URI;
 
@@ -36,7 +36,7 @@ public final class AssetLinksGrammar {
     public static final String SHA256_CERT_FINGERPRINT_PATTERN = "^(?:[0-9A-F]{2}:){31}[0-9A-F]{2}$";
 
     /** Tests if the specified URI is valid for {@link #GRAMMAR_WEB_SITE} */
-    public static boolean isValidSiteURI(@NonNull URI uri) {
+    public static boolean isValidSiteURI(@NotNull URI uri) {
         return (uri.isAbsolute() &&
                 ("http".equalsIgnoreCase(uri.getScheme()) ||
                         "https".equalsIgnoreCase(uri.getScheme())) &&

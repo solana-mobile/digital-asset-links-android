@@ -5,6 +5,8 @@
 plugins {
     id 'com.android.library'
     id 'com.google.protobuf' version "0.8.19"
+    id 'maven-publish'
+    id 'signing'
 }
 
 android {
@@ -43,6 +45,63 @@ android {
             }
         }
     }
+
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = group
+            artifactId = 'digital-asset-links-android'
+            pom {
+                name = 'Digital Asset Links for Android'
+                description = 'An implementation of Digital Asset Links for verifying Android packages against a domain hosting asset links'
+                url = 'https://github.com/solana-mobile/digital-asset-links-android'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        name = 'Solana Mobile Engineering'
+                        email = 'eng@solanamobile.com'
+                        organization = 'Solana Mobile Inc.'
+                        organizationUrl = 'https://solanamobile.com'
+                    }
+                }
+                organization {
+                    name = 'Solana Mobile Inc.'
+                    url = 'https://solanamobile.com'
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/solana-mobile/digital-asset-links-android.git'
+                    developerConnection = 'scm:git:ssh://github.com/solana-mobile/digital-asset-links-android.git'
+                    url = 'https://github.com/solana-mobile/digital-asset-links-android/tree/main'
+                }
+            }
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
+}
+
+signing {
+    // Signing private key and password provided by ORG_GRADLE_PROJECT_signingKey and
+    // ORG_GRADLE_PROJECT_signingPassword, respectively
+    def signingKey = findProperty('signingKey')
+    def signingPassword = findProperty('signingPassword')
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign publishing.publications.release
 }
 
 protobuf {

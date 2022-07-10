@@ -17,7 +17,11 @@ All Android projects within this repository can be built using [Android Studio](
 
 #### Gradle
 
-_Will be published on Maven Central shortly_
+```
+dependencies {
+    implementation 'com.solanamobile:digital-asset-links-android:1.0.0'
+}
+```
 
 ## Developer documentation
 

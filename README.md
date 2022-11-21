@@ -19,7 +19,7 @@ All Android projects within this repository can be built using [Android Studio](
 
 ```
 dependencies {
-    implementation 'com.solanamobile:digital-asset-links-android:1.0.0'
+    implementation 'com.solanamobile:digital-asset-links-android:1.0.1'
 }
 ```
 

@@ -70,6 +70,24 @@ public class AndroidAppPackageVerifierUnitTests {
     }
 
     @Test
+    public void testAppPackageVerificationNoCertificates() {
+        ArrayList<MockWebContentServer.Content> mockWebContent = new ArrayList<>();
+        mockWebContent.add(new MockWebContentServer.Content(
+                URI.create("https://www.test.com/.well-known/assetlinks.json"),
+                HttpURLConnection.HTTP_OK,
+                "application/json",
+                ANDROID_APP_STATEMENT_LIST_CERTS_2_3));
+
+        final PackageManager pm = mockPackageManagerFactory(
+                "com.test.sample", new byte[][] {}, true);
+
+        final AndroidAppPackageVerifierHarness verifier =
+                new AndroidAppPackageVerifierHarness(pm, mockWebContent);
+        assertThrows(AndroidAppPackageVerifier.CouldNotVerifyPackageException.class,
+                () ->verifier.verify("com.test.sample", URI.create("https://www.test.com")));
+    }
+
+    @Test
     public void testAppPackageVerificationNoAssetLinks() {
         ArrayList<MockWebContentServer.Content> mockWebContent = new ArrayList<>();
         mockWebContent.add(new MockWebContentServer.Content(
@@ -205,11 +223,11 @@ public class AndroidAppPackageVerifierUnitTests {
     private static PackageManager mockPackageManagerFactory(@NonNull String packageName,
                                                             @NonNull byte[][] certificates,
                                                             boolean multipleSigners) {
-        if (certificates.length == 0) {
-            throw new IllegalArgumentException("at least 1 certificate required");
-        } else if (multipleSigners && certificates.length == 1) {
-            throw new IllegalArgumentException("multipleSigners requires at least 2 certificates");
-        }
+        // if (certificates.length == 0) {
+        //     throw new IllegalArgumentException("at least 1 certificate required");
+        // } else if (multipleSigners && certificates.length == 1) {
+        //     throw new IllegalArgumentException("multipleSigners requires at least 2 certificates");
+        // }
 
         final PackageInfo pi = new PackageInfo();
         final int piFlags;

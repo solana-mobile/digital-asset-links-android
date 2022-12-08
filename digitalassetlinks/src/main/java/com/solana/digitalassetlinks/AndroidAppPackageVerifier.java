@@ -95,6 +95,10 @@ public class AndroidAppPackageVerifier extends URISourceVerifier {
             requireAllSignatures = true;
         }
 
+        if (signatureMask.length == 0) {
+            throw new CouldNotVerifyPackageException("Failed reading signatures for package " + packageName);
+        }
+
         // Create and configure an AssetLinksJSONParser object
         final StatementMatcher androidAppMatcher = StatementMatcher
                 .createAndroidAppStatementMatcher(

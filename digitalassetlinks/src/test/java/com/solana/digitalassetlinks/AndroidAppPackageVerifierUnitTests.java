@@ -223,11 +223,8 @@ public class AndroidAppPackageVerifierUnitTests {
     private static PackageManager mockPackageManagerFactory(@NonNull String packageName,
                                                             @NonNull byte[][] certificates,
                                                             boolean multipleSigners) {
-        // if (certificates.length == 0) {
-        //     throw new IllegalArgumentException("at least 1 certificate required");
-        // } else if (multipleSigners && certificates.length == 1) {
-        //     throw new IllegalArgumentException("multipleSigners requires at least 2 certificates");
-        // }
+        // NOTE: empty certificates would normally be an error, but we want to exercise unit tests
+        // for this case, so allow it when constructing a mock PackageManager
 
         final PackageInfo pi = new PackageInfo();
         final int piFlags;

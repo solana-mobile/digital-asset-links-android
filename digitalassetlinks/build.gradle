@@ -4,7 +4,7 @@
 
 plugins {
     id 'com.android.library'
-    id 'com.google.protobuf' version "0.9.1"
+    id 'com.google.protobuf' version "0.9.2"
     id 'maven-publish'
     id 'signing'
 }

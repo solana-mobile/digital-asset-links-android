@@ -4,18 +4,18 @@
 
 plugins {
     id 'com.android.library'
-    id 'com.google.protobuf' version "0.9.4"
+    id 'com.google.protobuf' version '0.9.4'
     id 'maven-publish'
     id 'signing'
 }
 
 android {
     namespace = 'com.solana.digitalassetlinks'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         minSdk 23
-        targetSdk 33
+        targetSdk 34
 
         consumerProguardFiles "consumer-rules.pro"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -107,14 +107,8 @@ signing {
 
 protobuf {
     protoc {
-        def archSuffix = ''
-        if (osdetector.os == "osx") {
-            // Workaround: there are no published protoc binaries for Apple Silicon-based macs.
-            // Apply a manual architecture to the artifact to select the osx-x86_64 variant, which
-            // runs fine with Rosetta.
-            archSuffix = ':osx-x86_64'
-        }
-        artifact = "com.google.protobuf:protoc:3.23.1$archSuffix"   // Download from repositories
+        def protoc_ver = '4.28.2'
+        artifact = "com.google.protobuf:protoc:$protoc_ver"   // Download from repositories
     }
     generateProtoTasks {
         all().each { task ->
@@ -147,13 +141,14 @@ tasks.whenTaskAdded { task ->
 }
 
 dependencies {
-    compileOnly 'androidx.annotation:annotation:1.6.0'
-    testImplementation 'com.google.protobuf:protobuf-java:3.25.2'
+    compileOnly 'androidx.annotation:annotation:1.8.2'
+    testImplementation 'androidx.annotation:annotation:1.8.2'
+    testImplementation 'com.google.protobuf:protobuf-java:4.28.2'
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.mockito:mockito-inline:5.2.0'
-    testImplementation 'org.robolectric:robolectric:4.11.1'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test:rules:1.5.0'
-    androidTestImplementation 'androidx.test:runner:1.5.2'
+    testImplementation 'org.robolectric:robolectric:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test:rules:1.6.1'
+    androidTestImplementation 'androidx.test:runner:1.6.2'
     androidTestImplementation 'junit:junit:4.13.2'
 }

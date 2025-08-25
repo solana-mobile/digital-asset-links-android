@@ -11,7 +11,7 @@ plugins {
 
 android {
     namespace = 'com.solana.digitalassetlinks'
-    compileSdk 34
+    compileSdk 36
 
     defaultConfig {
         minSdk 23

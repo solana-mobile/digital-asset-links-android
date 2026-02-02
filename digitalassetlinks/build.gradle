@@ -107,7 +107,7 @@ signing {
 
 protobuf {
     protoc {
-        def protoc_ver = '4.33.4'
+        def protoc_ver = '4.33.5'
         artifact = "com.google.protobuf:protoc:$protoc_ver"   // Download from repositories
     }
     generateProtoTasks {

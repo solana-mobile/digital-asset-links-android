@@ -141,8 +141,8 @@ tasks.whenTaskAdded { task ->
 }
 
 dependencies {
-    compileOnly 'androidx.annotation:annotation:1.9.1'
-    testImplementation 'androidx.annotation:annotation:1.9.1'
+    compileOnly 'androidx.annotation:annotation:1.10.0'
+    testImplementation 'androidx.annotation:annotation:1.10.0'
     testImplementation 'com.google.protobuf:protobuf-java:4.34.1'
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.mockito:mockito-inline:5.2.0'
